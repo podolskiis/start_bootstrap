@@ -1,0 +1,54 @@
+// Fixed Width of the site | unit(980px) | false
+$fix-width-site: false;
+
+// Grid base gutter of columns
+// 15px 0.9375rem | 16px 1rem | 20px 1.25rem | 30px 1.875rem | 40px 2.5rem
+$grid-gutter-width: $grid-gutter;
+$grid-gutter-sm: $grid-gutter-sm;
+@if $fix-width-site {
+    $grid-gutter-sm: false;
+}
+
+// Breakpoints Window
+$sm: unit(576px) ;
+$md: unit(768px) ;
+$lg: unit(992px) ;
+$xl: unit(1200px);
+
+// Media Min
+$min-sm: 'min-width: #{$sm}';
+$min-md: 'min-width: #{$md}';
+$min-lg: 'min-width: #{$lg}';
+$min-xl: 'min-width: #{$xl}';
+
+// Media Max
+$maxnum: unit(.98px);
+$max-sm: 'max-width: #{$sm - $maxnum}';
+$max-md: 'max-width: #{$md - $maxnum}';
+$max-lg: 'max-width: #{$lg - $maxnum}';
+$max-xl: 'max-width: #{$xl - $maxnum}';
+
+// Breakpoints base
+$max-base: $max-lg;
+$min-base: $min-lg;
+
+
+// BOOTSTRAP OVERRIDE
+// ******************
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs : 0,
+  sm : $sm,
+  md : $md,
+  lg : $lg,
+  xl : $xl
+);
+
+// Grid containers
+$container-max-widths: (
+  sm : unit(540px),
+  md : unit(720px),
+  lg : unit(960px),
+  xl : unit(1140px)
+);

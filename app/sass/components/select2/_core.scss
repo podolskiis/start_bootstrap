@@ -1,0 +1,58 @@
+.select2-close-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 99;
+
+  // styles required for IE to work
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+
+.select2-hidden-accessible {
+  @include field-hide;
+}
+
+.b-select2 {
+  $root: &;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  max-width: 100%;
+  @at-root {
+    select[data-select] {
+      @include field-hide;
+    }
+  }
+  & > * {
+    display: block;
+  }
+  &.w100p .select2-container {
+    width: 100% !important;
+  }
+}
+
+.select2-container {
+  box-sizing: border-box;
+
+  display: block;
+  margin: 0;
+  position: relative;
+  vertical-align: middle;
+
+  @import "single";
+}
+@import "dropdown";
+
+@import "theme/tm-1/layout";
+// @import "theme/tm-2/layout";

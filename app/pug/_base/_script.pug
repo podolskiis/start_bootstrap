@@ -1,0 +1,12 @@
+- var src = 'https://cdnjs.cloudflare.com/ajax/libs'
++scripts(`${src}/jquery/3.3.1/jquery.min.js`)
+
+// build:js assets/js/vendors.min.js 
+= '\n'
+<!-- bower:js -->
+<!-- endbower -->
+// endbuild 
+
+block scripts
+
++scripts("assets/js/theme.js"+revAppend)

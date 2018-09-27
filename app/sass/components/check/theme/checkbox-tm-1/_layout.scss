@@ -1,0 +1,76 @@
+@import 'var';
+
+&--checkbox-tm-1 {
+  $check: 'check'; // check | square
+  #{$root}__col {
+    &:last-child {
+      margin-left: $ch-spacing-col;
+    }
+  }
+  #{$root}__checked {
+    @include tsn;
+    background-color: $ch-bg;
+    border: $ch-border-width solid $ch-border-color;
+    border-radius: $ch-border-radius;
+    width: $ch-size;
+    height: $ch-size;
+    &::before {
+      @include tsn-all;
+      @if $check == 'square' {
+        top: $ch-gutter-checked;
+        left: $ch-gutter-checked;
+        right: $ch-gutter-checked;
+        bottom: $ch-gutter-checked;
+        background-color: $ch-border-color;
+        border-radius: $ch-border-radius - unit(1);
+      }
+      @if $check == 'check' {
+        border-bottom: unit(3px) solid $ch-border-focus-color;
+        border-left: unit(3px) solid $ch-border-focus-color;
+        top: unit(3px);
+        left: 0;
+        width: 100%;
+        height: 50%;
+        transform: rotate(-50deg) scale(.6);
+      }
+    }
+  }
+  #{$root}__text {
+    font-size: $ch-text-font-size;
+  }
+  #{$root}__input {
+    // hover
+    &:hover + #{$root}__checked {
+      &:before {
+      }
+    }
+    // focus
+    &:focus + #{$root}__checked {
+      background-color: $ch-bg;
+      border-color: $ch-border-focus-color;
+      &:before {
+      }
+    }
+    // checked
+    &:checked + #{$root}__checked {
+      @if $check == 'square' {
+        &:before {
+          background-color: $ch-color-checked;
+        }
+      }
+      @if $check == 'check' {
+        background-color: $ch-color-checked;
+        border-color: $ch-color-checked;
+        color: #fff;
+        &:before {
+          border-color: #fff;
+        }
+      }
+    }
+  }
+  a {
+    &:hover {
+
+    }
+  }
+}

@@ -1,0 +1,73 @@
+$dir-base:   './assets/';
+$dir-fonts:  '../fonts/';
+$dir-images: '../images/theme/';
+
+// FONT
+$ff-base: 'roboto', sans-serif;
+$fz-base: unit(16px);
+$fw-base: 400;
+$lh-base: 1.4;
+
+// GUTTER-SPACING
+$gutter-base: unit(30px);
+$gutter-item: unit(15px);
+$grid-gutter: $gutter-base;
+$grid-gutter-sm: unit(20px);
+
+$offset-size-map: ( // px
+	0,5,10,15,20,25,30,50
+);
+
+// COLORS
+$color-1: #333333;
+$color-2: #cc0000;
+$color-3: #9ACD32;
+$color-4: #0275d8;
+
+$link-color-base:        $color-4;
+$link-hover-color-base:  darken($link-color-base, 7.5%);
+$link-active-color-base: darken($link-color-base, 15%);
+
+$bg-color: (
+	white:        #fff,
+	black:        #000,
+	gray:         #ccc,
+);
+$text-color: (
+	white:        #fff,
+	black:        #000,
+	gray:         #ccc,
+	accent:       $color-2,
+	link:         $link-color-base,
+);
+$array-colors: ($bg-color, $text-color);
+
+$duration-base:         .2s;
+$border-radius-base:    unit(3px);
+$box-shadow-below-base: unit(1px) unit(1px) unit(5px) rgba(#000, .3);
+$box-shadow-above-base: unit(1px) unit(-1px) unit(5px) rgba(#000, .3);
+
+// FORM ELEMENTS
+$placeholder-color:        #aaa;
+$placeholder-focus-color:  #ddd;
+
+$input-bg-color:           #fff;
+$input-bg-focus-color:     #fff;
+$input-border-color:       #ddd;
+$input-border-focus-color: #aaa;
+$input-border-radius:      $border-radius-base;
+$input-font-color:         $color-1;
+
+$input-border-width:       1px;
+$input-height:             unit(40px);
+$input-padding-y:          unit(8px);
+$input-padding-x:          unit(10px);
+
+$input-font-size:          $fz-base;
+$input-font-weight:        400;
+$form-group-spacing:       $gutter-item;
+
+// WRAP
+$wrap: (
+	600,900,1024,
+);

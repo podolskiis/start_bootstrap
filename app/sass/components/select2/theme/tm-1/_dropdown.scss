@@ -1,0 +1,99 @@
+.select2-dropdown {
+  background-color: $dropdown-bg-color;
+  border: $selection-bd-width solid $selection-bd-color;
+  border-radius: $selection-bd-radius;
+  z-index: $dropdown-z-index;
+}
+
+.select2-results__options {
+  overflow-y: auto;
+
+  // По количеству отображающих пунктов
+  max-height: $results-option-height*5 + $selection-bd-radius;
+
+  // По фиксированной ширине
+  // max-height: $dropdown-options-max-height + $selection-bd-radius + $results-option-height;
+
+  // margin-left: - $selection-bd-width;
+  // margin-right: - $selection-bd-width;
+}
+
+.select2-results__option {
+  padding: $results-option-height-padding $selection-padding-right;
+  line-height: ($results-option-height) - ($results-option-height-padding*2);
+  font-size: $results-option-font-size;
+  font-weight: $results-option-font-weight;
+  text-transform: $results-option-text-transform;
+  color: $selection-color;
+  @include tsn(.1s);
+
+  &[aria-selected="true"] {
+    background-color: $results-option-selected;
+  }
+
+  &--highlighted {
+    background-color: $results-option-highlighted;
+    &[aria-selected="true"] {
+      background-color: $results-option-highlighted;
+    }
+  }
+
+  &:last-child {
+    // border-bottom-left-radius: $selection-bd-radius;
+    // border-bottom-right-radius: $selection-bd-radius;
+  }
+}
+
+&.select2-container--open .select2-dropdown {
+  border-color: $selection-open-bd-color;
+  &:before {
+    height: 10px;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: $dropdown-bg-color;
+  }
+
+  &--below {
+    box-shadow: $dropdown-box-shadow-below;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 15px;
+    &:before {
+      bottom: 100%;
+    }
+    .select2-results__options {
+      padding-bottom: $selection-bd-radius;
+    }
+  }
+
+  &--above {
+    box-shadow: $dropdown-box-shadow-above;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &:before {
+      top: 100%;
+    }
+    .select2-results__options {
+      padding-top: $selection-bd-radius;
+    }
+  }
+
+  .select2-search--dropdown {
+    padding: 4px;
+
+    .select2-search__field {
+      padding: 4px;
+    }
+  }
+}
+
+@if $mobile {
+  @media($max-sm) {
+    .select2-results__option {
+      padding-left: $selection-padding-left-mobile;
+      padding-right: $selection-padding-left-mobile;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import 'var';
+@import 'icomoon';
+
+// fixed: IOS
+.fa, .fab, .fal, .far, .fas {
+	line-height: 1.1;
+}
+
+.icon {
+	&--middle {
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: -.25em;
+	}
+	&--layout-left {
+		margin-right: $ic-spacing-y;
+	}
+	&--layout-right {
+		margin-left: $ic-spacing-y;
+	}
+}

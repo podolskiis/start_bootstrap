@@ -1,0 +1,39 @@
+.form {
+  $root: &;
+  #{$root}__field {
+    outline: none;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    vertical-align: middle;
+    max-width: 100%;
+    line-height: normal;
+    &::placeholder {}
+    &:not(textarea) {
+      @include text-overflow;
+    }
+  }
+  textarea#{$root}__field {
+    display: block;
+  }
+  .is-ios & {
+    textarea#{$root}__field {
+      text-indent: -3px;
+      &::placeholder {
+        text-indent: 0;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      #{$root}__field,
+      #{$root}__select {
+        font-size: 16px !important;
+      }
+    }
+  }
+
+  @import 'theme/tm-1/layout';
+}

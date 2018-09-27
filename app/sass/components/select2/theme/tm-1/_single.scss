@@ -1,0 +1,97 @@
+.select2-selection--single {
+  background-color: $selection-bg-color;
+  border-radius: $selection-bd-radius;
+  border: $selection-bd-width solid $selection-bd-color;
+  color: $selection-color;
+  text-transform: $selection-text-transform;
+  font-weight: $selection-font-weight;
+  height: $selection-height;
+  line-height: $selection-height - (unit($selection-bd-width)*2);
+  font-size: $selection-font-size;
+
+  .select2-selection__rendered {
+    padding-left: $selection-padding-right;
+    padding-right: $selection-padding-left;
+  }
+
+  // ARROW
+  .select2-selection__arrow {
+    position: absolute;
+    top: $selection-bd-width;
+    right: $selection-bd-width;
+    bottom: $selection-bd-width;
+    width: $selection-padding-left;
+    color: $selection-arrow-color;
+    &::before {
+      @include icomoon;
+      // @include tsn-all(.1s);
+      content: $selection-arrow-icon-link;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: $selection-arrow-font-size;
+    }
+    & > b {display: none;}
+  }
+
+  .select2-selection__placeholder {
+    color: $selection-placeholder-color;
+  }
+}
+
+// SELECTED
+&.selected {
+  .select2-selection--single {
+    .select2-selection__arrow {
+      color: $selection-arrow-selected-color;
+    }
+  }
+}
+
+// OPEN
+&.select2-container--open {
+
+  .select2-selection--single {
+    background-color: $selection-open-bg-color;
+    border-color: $selection-open-bd-color;
+    color: $selection-open-color;
+
+    .select2-selection__arrow {
+      &::before {
+        content: $selection-arrow-icon-active;
+      }
+    }
+  }
+
+  &.select2-container--below .select2-selection--single {
+    box-shadow: $dropdown-box-shadow-below;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.select2-container--above .select2-selection--single {
+    box-shadow: $dropdown-box-shadow-above;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .select2-selection__placeholder {
+    color: $selection-open-placeholder-color;
+  }
+
+}
+
+@if $mobile {
+  @media($max-sm) {
+    .select2-selection--single {
+      .select2-selection__rendered {
+        padding-left: $selection-padding-left-mobile;
+        padding-right: $selection-padding-right-mobile;
+      }
+      .select2-selection__arrow {
+        width: $selection-padding-right-mobile;
+      }
+    }
+  }
+}

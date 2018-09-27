@@ -1,0 +1,38 @@
+meta(charset="utf-8")
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="viewport" content="width=device-width")
+//- Запрещаем распознавать номера телефонов и адреса, а так-же выделять их:
+meta(name="format-detection" content="telephone=no")
+meta(name="format-detection" content="address=no")
+//- meta(http-equiv="x-rim-auto-match" content="none") // не проходит validatе w3 HTML
+
+block title
+	title=pojectTitle
+
++favicon
+
+meta(name="description" content=title + ' ' + poject)
+meta(name="keywords" content=poject)
+
+// build:css assets/css/vendors.min.css 
+= '\n'
+<!-- bower:css -->
+<!-- endbower -->
+// endbuild 
+
+block links
+
+if icomoon
+	+links("//i.icomoon.io/public/temp/"+icomoon+"/style.css")
+//- 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
++links(
+	"assets/css/theme.min.css"+revAppend,
+	"assets/css/custom.css"
+)
+
+if modernizr
+	+scripts("assets/js/modernizr.js")
+
++ltIE-10

@@ -1,0 +1,47 @@
+// select
+$selection-placeholder-color:       $placeholder-color;
+$selection-color:                   $input-font-color;
+$selection-bg-color:                $input-bg-color;
+// border
+$selection-bd-width:                $input-border-width;
+$selection-bd-radius:               $input-border-radius;
+$selection-bd-color:                $input-border-color;
+// size
+$selection-height:                  $input-height;
+$selection-padding-right:           $input-padding-x;
+$selection-font-size:               $input-font-size;
+$selection-font-weight:             $input-font-weight;
+$selection-text-transform:          inherit;
+// arrow
+$selection-arrow-icon-link:         '\25bc';
+$selection-arrow-icon-active:       '\25b2';
+$selection-arrow-font-size:         unit(10px);
+$selection-arrow-color:             $selection-placeholder-color;
+$selection-arrow-selected-color:    $selection-color;
+$selection-padding-left:            $selection-arrow-font-size + ($selection-padding-right*2);
+// open
+$selection-open-bg-color:           #fff;
+$selection-open-bd-color:           $input-border-focus-color;
+$selection-open-color:              $input-font-color;
+$selection-open-placeholder-color:  $selection-placeholder-color;
+// dropdown
+$dropdown-z-index:                  99995;
+$dropdown-options-max-height:       unit(200px); // По фиксированной ширине
+$dropdown-options-max-height:       5; // По количеству отображающих пунктов
+$dropdown-bg-color:                 $selection-open-bg-color;
+$dropdown-box-shadow-below:         $box-shadow-below-base;
+$dropdown-box-shadow-above:         $box-shadow-above-base;
+$results-option-height:             $selection-height;
+$results-option-height-padding:     unit(8px);
+$results-option-selected:           #ddd;
+$results-option-highlighted:        #eee;
+$results-option-font-size:          $selection-font-size;
+$results-option-font-weight:        $selection-font-weight;
+$results-option-text-transform:     $selection-text-transform;
+
+// mobile
+$mobile: null;
+@if $mobile {
+  $selection-padding-left-mobile:     $mb-input-padding-x;
+  $selection-padding-right-mobile:    $selection-padding-left - $selection-padding-left-mobile;
+}

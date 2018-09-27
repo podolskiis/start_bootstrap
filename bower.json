@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+	"overrides": {
+		"bootstrap": {
+			"main": [
+				
+			]
+		},
+		"fancybox": {
+			"dependencies": []
+		},
+		"slick-carousel": {
+			"dependencies": []
+		},
+		"select2": {
+			"main": [
+				"dist/js/select2.full.js"
+			]
+		}
+	},
+	"devDependencies": {}
+}

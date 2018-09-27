@@ -1,0 +1,9 @@
+## Dir
+node_modules/
+app/bower/
+app/bower_components/
+build/
+dist/
+www/
+/**/*.DS_Store
+package-lock.json

@@ -1,0 +1,10 @@
+@mixin wrap($data) {
+  .wrap {
+    margin-left: auto;
+    margin-right: auto;
+    @each $val in $data {
+      &--w#{$val} {
+        max-width: $val+px;}
+    }
+  }
+}

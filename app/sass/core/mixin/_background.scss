@@ -1,0 +1,6 @@
+@mixin bg-i($img) {
+  background-image: url('#{$dir-images}#{$img}');
+}
+@mixin bg-d($img){
+  background: url('#{$dir-images}data:image/png;base64,#{$img}');
+}

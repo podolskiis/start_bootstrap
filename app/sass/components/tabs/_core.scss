@@ -1,0 +1,33 @@
+// Naming
+$tabs:         '.b-tabs';
+$tabs-nav:     '.b-tabs-nav';
+$tabs-content: '.b-tabs-content';
+
+// base style
+#{$tabs-nav} {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  &__link {
+    cursor: pointer;
+  }
+}
+#{$tabs-content} {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+
+// import theme
+@import "theme/tm-1/layout";

@@ -1,0 +1,66 @@
+@import 'var';
+@import '../../mixin/import';
+
+&--tm-1 {
+  // FIELD
+  #{$root}__field,
+  .b-field-icon__field {
+    &::placeholder {
+      @include tsn-all;
+      color: $placeholder-color;
+    }
+    &:focus, &.focus {
+      &::placeholder {
+        color: $placeholder-focus-color;
+      }
+    }
+    @include field-input;
+  }
+  textarea#{$root}__field {
+    height: auto;
+    min-height: unit(100px);
+  }
+  // LABEL
+  #{$root}__label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: unit(5px);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // GROUP
+  #{$root}__group {
+    margin-top: $form-group-gutter;
+    &:first-child {
+      margin-top: 0;
+    }
+    &--bt {
+      margin-top: $form-group-gutter * 2;
+    }
+  }
+  // INPUT-ICON
+  .b-field-icon {
+    @include field-icon(18px);
+    &__field {
+      @include text-overflow;
+    }
+    &__icon {
+      @include tsn-all;
+      opacity: .5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  // VALIDATE
+  input.error, textarea.error {
+    border-color: $input-border-color-error !important;
+    box-shadow: 0 0 unit(3px) $input-border-color-error !important;
+  }
+  label.error {
+    display: none !important;
+  }
+}

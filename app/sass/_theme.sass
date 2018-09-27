@@ -1,0 +1,95 @@
+.s-header, .s-footer
+	background: #9ACD32
+
+
+.b-title
+.b-logo
+	margin: 0
+	display: inline-block
+	vertical-align: top
+	line-height: 0
+	&__link
+		text-decoration: none
+		color: inherit
+		display: block
+		&:hover
+			text-decoration: none
+			color: inherit
+	&__title
+		display: none
+.b-menu-main
+	$root: &
+	ul
+		+reset-list
+	a
+		display: block
+		text-decoration: none !important
+	&__list
+		display: flex
+		flex-flow: row wrap
+	&__item
+		position: relative
+	&__link
+		background: #ddd
+		color: $color-1
+		padding: unit(10px) unit(15px)
+		&:hover,
+		#{$root}__item.active &
+			color: #fff
+			background: #999
+	&__submenu
+		position: absolute
+		z-index: 99
+		width: unit(220px)
+		display: none
+		#{$root}__item:hover > &,
+		#{$root}-submenu__item:hover > &
+			display: block
+		#{$root}__submenu &
+			top: 0
+			left: 100%
+	#{$root}-submenu
+		background: #ddd
+		box-shadow: $box-shadow-below-base
+		&__item
+			position: relative
+		&__link
+			padding: unit(10px) unit(15px)
+.b-breadcrumb
+	&__list
+		+reset-list
+		+gutter(unit(5px))
+		margin: 0 0 unit(15px)
+		display: flex
+		flex-flow: row wrap
+	&__item
+		&::before
+			content: '|'
+			margin: 0 unit(10px)
+		&:first-child::before
+			display: none
+	&__link
+	&__span
+	@media($max-lg)
+		display: none
+.b-phone
+	text-decoration: none
+	color: $color-1
+	white-space: nowrap
+	&__cod
+		color: #fff
+	&__num
+		font-weight: 700
+
+
+.s-base
+	position: relative
+	padding: unit(30px) 0
+	@media($min-md)
+		padding: unit(50px) 0
+.s-header
+.s-footer
+
+.test
+	background: #000
+	padding: 10px

@@ -1,0 +1,20 @@
+#id_1.modall.modall--default.modall--animation-1.wrap--w600
+	.grid.modall__content
+		h3.modall__title
+			| title
+		form.form.form--tm-1
+			.form__group
+				input(type="text" name="name" placeholder="Ваше имя" required).form__field
+			.form__group
+				input(type="email" name="email" placeholder="Ваш e-mail" required).form__field
+			.form__group.form__group--bn
+				button.bn.bn--default
+					| Button
+					i.fas.fa-angle-right.icon.icon--layout-right
+					
+#id_2.modall.modall--text.modall--animation-1.wrap--w1024
+	.grid.modall__content
+		h3.modall__title
+			| title
+		- for (var x = 1; x <= 15; x++)
+			+p

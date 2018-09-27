@@ -1,0 +1,4 @@
+// example: .bg-white/.text-white
+@each $var in $array-colors {
+  @include colors($var);
+}

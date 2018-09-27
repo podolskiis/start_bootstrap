@@ -1,0 +1,91 @@
+.b-slider {
+  $root: &;
+
+  #{$root}__item {
+    position: relative;
+    vertical-align: middle;
+  }
+  #{$root}__carousel {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    &.slick-initialized {
+      display: block;
+    }
+    &.slick-dotted + * {
+      display: none;
+    }
+  }
+
+  // SLIDE
+  .slick-slide {
+    outline: none;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  // ARROW
+  .slick-arrow {
+    // @include reset-btn;
+    position: absolute;
+    z-index: 9;
+  }
+
+  // SLIDER
+  .slick-slider {
+    &.slick-vertical {
+      .slick-slide {
+        border: 0
+      }
+      .slick-arrow {
+        left: 50%;
+        transform: translateX(-50%);
+        &[class*="left"],&[class*="prev"] {
+          top: 0;
+        }
+        &[class*="next"],&[class*="next"] {
+          bottom: 0;
+        }
+      }
+    }
+    &:not(.slick-vertical) {
+      .slick-arrow {
+        top: 50%;
+        transform: translateY(-50%);
+        &[class*="left"],&[class*="prev"] {
+          left: 0;
+        }
+        &[class*="right"],&[class*="next"] {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  // DOTS
+  .slick-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    button {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      font-size: 0 !important;
+      line-height: 0 !important;
+      display: block !important;
+      outline: none;
+    }
+  }
+
+  @import "theme/horizontal-tm-1/layout";
+  @import "theme/vertical-tm-1/layout";
+}

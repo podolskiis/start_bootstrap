@@ -1,0 +1,27 @@
+#{$tabs-nav} {
+  background-color: #eee;
+  @media($max-md) {
+    display: none;
+  }
+}
+
+#{$tabs-nav}__list {
+  justify-content: center;
+}
+
+#{$tabs-nav}__item {}
+
+#{$tabs-nav}__link {
+  @include tsn;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: unit(10px);
+}
+
+// ACTIVE
+#{$tabs-nav}__item.active {
+  #{$tabs-nav}__link {
+    color: red;
+  }
+}

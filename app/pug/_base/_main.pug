@@ -1,0 +1,29 @@
+doctype html
+include _vars.pug
+include ../_mixins/_mix-include.pug
+html(lang="zxx")
+	head
+		include _head.pug
+	body.page(class=bodyClasses)
+		if hide_top
+			include ../_section/_static/_hide-top.pug
+		.page-wrap
+			if header
+				// HEADER: START 
+				include ../_section/_static/_s-header.pug
+				// HEADER: END 
+			if main
+				// MAIN: START 
+				main.s-main
+					block content
+				// MAIN: END 
+			if footer
+				// FOOTER: START 
+				include ../_section/_static/_s-footer.pug
+				// FOOTER: END 
+		if hide_bot
+			// MODALS: START 
+			.modals-wrap
+				include ../_section/_static/_hide-bot.pug
+			// MODALS: END 
+		include _script.pug
