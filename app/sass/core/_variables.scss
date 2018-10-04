@@ -1,6 +1,6 @@
-$dir-base:   './assets/';
-$dir-fonts:  '../fonts/';
-$dir-images: '../images/theme/';
+$dir-base: './assets/';
+$dir-fonts-base: '../fonts/';
+$dir-images-base: '../images/theme/';
 
 // FONT
 $ff-base: 'roboto', sans-serif;
@@ -9,10 +9,10 @@ $fw-base: 400;
 $lh-base: 1.4;
 
 // GUTTER-SPACING
-$gutter-base: unit(30px);
-$gutter-item: unit(15px);
-$grid-gutter: $gutter-base;
-$grid-gutter-sm: unit(20px);
+$gutter-grid-base: 30px;
+$gutter-grid-sm-base: 20px;
+$gutter-base: unit($gutter-grid-base);
+$gutter-item-base: unit(15px);
 
 $offset-size-map: ( // px
 	0,5,10,15,20,25,30,50
@@ -65,9 +65,9 @@ $input-padding-x:          unit(10px);
 
 $input-font-size:          $fz-base;
 $input-font-weight:        400;
-$form-group-spacing:       $gutter-item;
+$form-group-spacing:       $gutter-item-base;
 
 // WRAP
 $wrap: (
-	600,900,1024,
+	600,900
 );

@@ -2,12 +2,12 @@
 @mixin font($ff, $url) {
   @font-face {
     font-family: $ff;
-    src: url(#{$dir-fonts+$url}.eot);
-    src: url(#{$dir-fonts+$url}.eot?#iefix) format('embedded-opentype'),
-         url(#{$dir-fonts+$url}.ttf) format('truetype'),
-         url(#{$dir-fonts+$url}.woff) format('woff'),
-         url(#{$dir-fonts+$url}.woff2) format('woff2'),
-         url(#{$dir-fonts+$url}.svg##{$ff}) format('svg');
+    src: url(#{$dir-fonts-base+$url}.eot);
+    src: url(#{$dir-fonts-base+$url}.eot?#iefix) format('embedded-opentype'),
+         url(#{$dir-fonts-base+$url}.ttf) format('truetype'),
+         url(#{$dir-fonts-base+$url}.woff) format('woff'),
+         url(#{$dir-fonts-base+$url}.woff2) format('woff2'),
+         url(#{$dir-fonts-base+$url}.svg##{$ff}) format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -23,7 +23,7 @@
     } @else {
       $style: normal;
     }
-    $path: ($dir-fonts+$url) + '/' + ($fw+$styleMin) + '.woff';
+    $path: ($dir-fonts-base+$url) + '/' + ($fw+$styleMin) + '.woff';
     @font-face {
       font-family: $ff;
       font-style: $style;

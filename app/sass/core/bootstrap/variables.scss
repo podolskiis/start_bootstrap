@@ -3,17 +3,17 @@ $fix-width-site: false;
 
 // Grid base gutter of columns
 // 15px 0.9375rem | 16px 1rem | 20px 1.25rem | 30px 1.875rem | 40px 2.5rem
-$grid-gutter-width: $grid-gutter;
-$grid-gutter-sm: $grid-gutter-sm;
+$grid-gutter-width: $gutter-grid-base;
+$grid-gutter-sm: $gutter-grid-sm-base;
 @if $fix-width-site {
     $grid-gutter-sm: false;
 }
 
 // Breakpoints Window
-$sm: unit(576px) ;
-$md: unit(768px) ;
-$lg: unit(992px) ;
-$xl: unit(1200px);
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
 
 // Media Min
 $min-sm: 'min-width: #{$sm}';
@@ -22,7 +22,7 @@ $min-lg: 'min-width: #{$lg}';
 $min-xl: 'min-width: #{$xl}';
 
 // Media Max
-$maxnum: unit(.98px);
+$maxnum: .98px;
 $max-sm: 'max-width: #{$sm - $maxnum}';
 $max-md: 'max-width: #{$md - $maxnum}';
 $max-lg: 'max-width: #{$lg - $maxnum}';
@@ -47,8 +47,8 @@ $grid-breakpoints: (
 
 // Grid containers
 $container-max-widths: (
-  sm : unit(540px),
-  md : unit(720px),
-  lg : unit(960px),
-  xl : unit(1140px)
+  sm : 540px,
+  md : 720px,
+  lg : 960px,
+  xl : 1140px
 );

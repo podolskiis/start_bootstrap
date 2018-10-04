@@ -26,9 +26,9 @@ mixin scripts(...files)
 
 //- CURRENT PAGE
 mixin pageTitle(tit)
-	- var pojectName = (poject) ? ' | ' + poject : ''
+	- poject = (poject) ? ' | ' + poject : ''
 	- activeMenu = tit
-	- pojectTitle = tit[tit.length-1] + pojectName
+	- pojectTitle = tit[tit.length-1] + poject
 	if bodyClasses
 		each item in menu_main
 			if (item.val == tit[0])

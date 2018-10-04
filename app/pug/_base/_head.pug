@@ -14,6 +14,11 @@ block title
 meta(name="description" content=title + ' ' + poject)
 meta(name="keywords" content=poject)
 
+//- CDN connect
++links(
+	"//use.fontawesome.com/releases/v5.3.1/css/all.css"
+)
+
 // build:css assets/css/vendors.min.css 
 = '\n'
 <!-- bower:css -->
@@ -24,11 +29,9 @@ block links
 
 if icomoon
 	+links("//i.icomoon.io/public/temp/"+icomoon+"/style.css")
-//- 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 +links(
-	"assets/css/theme.min.css"+revAppend,
+	"assets/css/theme.min.css?rev=@@hash",
 	"assets/css/custom.css"
 )
 
