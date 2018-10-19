@@ -1,26 +1,52 @@
+/**
+ * Global variables
+ */
 'use strict';
-// fixes: iOS/WebKit
-if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-	var ios = document.getElementsByTagName('html');
-	for(i = 0; i < ios.length; i++){ios[i].classList.add('is-ios')}
+var userAgent = navigator.userAgent.toLowerCase(),
+	initialDate = new Date(),
+
+	$document = $(document),
+	$window = $(window),
+	$html = $('html'),
+
+	isIE = userAgent.indexOf('msie') != -1 ? parseInt(userAgent.split('msie')[1]) : userAgent.indexOf('trident') != -1 ? 11 : userAgent.indexOf('edge') != -1 ? 12 : false,
+	isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+	isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent),
+	isTouch = 'ontouchstart' in window,
+
+	plugins = {
+		fieldIcon: $('.b-field-icon'),
+	};
+
+/**
+ * iOS/WebKit
+ * @description: fixes on iOS devices
+ */
+if (isIos) {
+	var b = document.getElementsByTagName('html');
+	for (var i = 0; i < b.length; i++) b[i].classList.add('is-ios');
 }
 
-// jQuery
-$(function(){
-var // GLOBAL VARIABLES
-	// $gObj = $(''),
-	$gHtml = $('html');
+/**
+ * isScrolledIntoView
+ * @description: check the element whas been scrolled into the view
+ */
+function isScrolledIntoView(elem) {
+	return elem.offset().top + elem.outerHeight() >= $window.scrollTop() && elem.offset().top <= $window.scrollTop() + $window.height();
+}
+
+/**
+ * Initialize All Scripts
+ */
+$document.ready( function () {
 
 
-// script...
 
 
 
-
-
-// FOCUS FIELD-ICON
-(function(){
-	$('.b-field-icon').each(function(index, el) {
+// Focus field-icon
+if (plugins.fieldIcon.length) {
+	plugins.fieldIcon.each(function(index, el) {
 		$(this).on('focus', '.b-field-icon__field', function() {
 			$(this).parent().addClass('focus');
 			$(this).on('blur', function() {
@@ -28,15 +54,7 @@ var // GLOBAL VARIABLES
 			});
 		});
 	});
-}());
-
-
-// WINDOW-LOAD
-(function(){
-	$(window).on('load', function() {
-		$gHtml.addClass('is-ready');
-	}).trigger('load');
-}());
+}
 
 
 }); // END READY

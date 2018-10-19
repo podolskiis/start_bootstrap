@@ -3048,6 +3048,7 @@ img:not([height]) {
 }
 
 .page-wrap {
+    position: relative;
     overflow: hidden;
     display: -webkit-box;
     display: -webkit-flex;
@@ -3316,7 +3317,6 @@ img:not([height]) {
     margin: 0;
     padding: 0;
     -webkit-appearance: none;
-    -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: none;
     -webkit-border-radius: 0;
