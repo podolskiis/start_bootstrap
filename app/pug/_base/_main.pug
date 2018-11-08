@@ -5,8 +5,6 @@ html(lang="zxx")
 	head
 		include _head.pug
 	body.page(class=bodyClasses)
-		if hide_top
-			include ../_section/_static/_hide-top.pug
 		.page-wrap
 			if header
 				// HEADER: START 
@@ -14,16 +12,16 @@ html(lang="zxx")
 				// HEADER: END 
 			if main
 				// MAIN: START 
-				main.s-main
+				main.main
 					block content
 				// MAIN: END 
 			if footer
 				// FOOTER: START 
 				include ../_section/_static/_s-footer.pug
 				// FOOTER: END 
-		if hide_bot
+		if modals
 			// MODALS: START 
 			.modals-wrap
-				include ../_section/_static/_hide-bot.pug
+				include ../_section/_static/_modals.pug
 			// MODALS: END 
 		include _script.pug

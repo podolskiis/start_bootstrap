@@ -1,11 +1,6 @@
 @import 'var';
 @import 'icomoon';
 
-// fixed: IOS
-.fa, .fab, .fal, .far, .fas {
-	line-height: 1.1;
-}
-
 .icon {
 	&--middle {
 		display: inline-block;

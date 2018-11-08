@@ -1,6 +1,8 @@
 html
 	font-size: 100%
 body
+	-webkit-font-smoothing: subpixel-antialiased
+	text-rendering: optimizeLegibility
 	font-family: $ff-base
 	font-size: $fz-base
 	font-weight: $fw-base
@@ -20,7 +22,7 @@ html, body
 	@else
 		@media($max-md)
 			max-width: 100%
-		@media(max-width: 479.8px)
+		@media($max-sm)
 			padding: 0 $grid-gutter-sm/2
 
 img:not([height])

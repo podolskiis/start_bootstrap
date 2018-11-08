@@ -20,6 +20,18 @@
     height: auto;
     min-height: unit(100px);
   }
+  // FIELDSET
+	#{$root}__fieldset {
+		margin-bottom: rem(30);
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+		@media($min-md) {
+			& {
+				margin-bottom: rem(50);
+			}
+		}
+	}
   // LABEL
   #{$root}__label {
     display: block;
@@ -48,10 +60,9 @@
       @include text-overflow;
     }
     &__icon {
-      @include tsn-all;
-      opacity: .5;
+      color: $placeholder-color;
       &:hover {
-        opacity: 1;
+        color: $input-font-color;
       }
     }
   }

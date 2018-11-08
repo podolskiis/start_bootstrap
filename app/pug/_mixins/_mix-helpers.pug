@@ -87,7 +87,7 @@ mixin b-img-radius(src)
 			img(src=src alt="")
 
 mixin b-dev-pages(data)  
-	ul
+	ol&attributes(attributes)
 		each item in data
 			li
 				a(href=`${item}.html` target="_blank")
@@ -109,6 +109,14 @@ mixin date(input)
 		!= dDt + '.' + dMh + '.' + dYr + ' - ' + dHs + ':' + dMs
 
 mixin b-pagesUpdated
-	p: small
+	p: small&attributes(attributes)
 		| Обновлен: 
 		+date(Date())
+		
+mixin html-comment(title)
+	|
+	<!--[#{title}]>
+	block
+	|
+	|
+	<![end: #{title}]-->

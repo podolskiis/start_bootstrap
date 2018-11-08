@@ -1,0 +1,22 @@
+$helpers-map:(
+  hide: (display: none),
+  w100p: (width: 100%),
+) !default;
+
+$spacing-map: (
+  my: ('margin-top','margin-bottom'),
+  mt: 'margin-top',
+  mb: 'margin-bottom',
+  mx: ('margin-left','margin-right'),
+  ml: 'margin-left',
+  mr: 'margin-right',
+  py: ('padding-top','padding-bottom'),
+  pt: 'padding-top',
+  pb: 'padding-bottom',
+  px: ('padding-left','padding-right'),
+  pl: 'padding-left',
+  pr: 'padding-right',
+) !default;
+$spacing-size-map: $offset-size-map;
+
+@include breakpoint-helpers-init($grid-breakpoints);

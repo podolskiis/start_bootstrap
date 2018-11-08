@@ -2362,12 +2362,12 @@ a.text-dark:focus {
     margin-right: auto;
 }
 
-.wrap--w600 {
-    max-width: 600px;
+.max-w600 {
+    max-width: 37.5rem;
 }
 
-.wrap--w900 {
-    max-width: 900px;
+.max-w900 {
+    max-width: 56.25rem;
 }
 
 .gutter-0 {
@@ -2926,6 +2926,14 @@ a.text-dark:focus {
     font-size: 200% !important;
 }
 
+.ls-05 {
+    letter-spacing: 0.03125rem;
+}
+
+.ls-1 {
+    letter-spacing: 0.0625rem;
+}
+
 @font-face {
     font-family: "roboto";
   font-style: normal;
@@ -3029,6 +3037,8 @@ html {
 }
 
 body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
     font-family: "roboto", sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -3533,12 +3543,19 @@ img:not([height]) {
     margin: -1px;
     max-width: -webkit-calc(100%  + 2px);
     max-width: calc(100%  + 2px);
+    height: -webkit-calc(100% + 2px);
+    height: calc(100% + 2px);
 }
 
 .form--tm-1 .b-field-icon__field:focus,
 .form--tm-1 .b-field-icon__field.focus {
     background-color: #fff;
     border-color: #aaa;
+}
+
+.form--tm-1 .b-field-icon__field:not([size]) {
+    width: -webkit-calc(100%  + 2px);
+    width: calc(100%  + 2px);
 }
 
 .form--tm-1 .b-field-icon__icon {

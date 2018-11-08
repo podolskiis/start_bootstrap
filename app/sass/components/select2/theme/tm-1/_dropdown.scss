@@ -1,8 +1,45 @@
 .select2-dropdown {
   background-color: $dropdown-bg-color;
+	box-shadow: $dropdown-box-shadow-below;
   border: $selection-bd-width solid $selection-bd-color;
   border-radius: $selection-bd-radius;
   z-index: $dropdown-z-index;
+  &:before {
+    height: 10px;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: $dropdown-bg-color;
+  }
+  &--below {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 15px;
+    &:before {
+      bottom: 100%;
+    }
+    .select2-results__options {
+      padding-bottom: $selection-bd-radius;
+    }
+  }
+  &--above {
+    box-shadow: $dropdown-box-shadow-above;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    &:before {
+      top: 100%;
+    }
+    .select2-results__options {
+      padding-top: $selection-bd-radius;
+    }
+  }
+  .select2-search--dropdown {
+    padding: 4px;
+    .select2-search__field {
+      padding: 4px;
+    }
+  }
 }
 
 .select2-results__options {
@@ -29,6 +66,7 @@
 
   &[aria-selected="true"] {
     background-color: $results-option-selected;
+		display: none !important;
   }
 
   &--highlighted {
@@ -46,47 +84,6 @@
 
 &.select2-container--open .select2-dropdown {
   border-color: $selection-open-bd-color;
-  &:before {
-    height: 10px;
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: $dropdown-bg-color;
-  }
-
-  &--below {
-    box-shadow: $dropdown-box-shadow-below;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin-bottom: 15px;
-    &:before {
-      bottom: 100%;
-    }
-    .select2-results__options {
-      padding-bottom: $selection-bd-radius;
-    }
-  }
-
-  &--above {
-    box-shadow: $dropdown-box-shadow-above;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    &:before {
-      top: 100%;
-    }
-    .select2-results__options {
-      padding-top: $selection-bd-radius;
-    }
-  }
-
-  .select2-search--dropdown {
-    padding: 4px;
-
-    .select2-search__field {
-      padding: 4px;
-    }
-  }
 }
 
 @if $mobile {

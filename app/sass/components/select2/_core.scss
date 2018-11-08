@@ -37,6 +37,7 @@
   & > * {
     display: block;
   }
+  &.w-100 .select2-container,
   &.w100p .select2-container {
     width: 100% !important;
   }

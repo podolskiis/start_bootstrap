@@ -1,6 +1,3 @@
-.s-header, .s-footer
-	background: #9ACD32
-
 .b-title
 .b-logo
 	margin: 0
@@ -17,54 +14,63 @@
 	&__title
 		display: none
 .b-menu-main
-	$root: &
-	ul
-		+reset-list
+	$b: &
 	a
-		display: block
 		text-decoration: none !important
 	&__list
-		display: flex
+		+reset-list
 		flex-flow: row wrap
 	&__item
 		position: relative
 	&__link
+		display: flex
 		background: #ddd
 		color: $color-1
 		padding: unit(10px) unit(15px)
 		&:hover,
-		#{$root}__item.active &
+		#{$b}__item:hover &,
+		#{$b}__item.active &
 			color: #fff
 			background: #999
 	&__submenu
 		position: absolute
 		z-index: 99
 		width: unit(220px)
+		padding-top: rem(15px)
+		// margin-left: rem(-15px)
 		display: none
-		#{$root}__item:hover > &,
-		#{$root}-submenu__item:hover > &
+		#{$b}__item:hover > &,
+		#{$b}-submenu__item:hover > &
 			display: block
-		#{$root}__submenu &
+		#{$b}__submenu &
 			top: 0
 			left: 100%
-	#{$root}-submenu
-		background: #ddd
-		box-shadow: $box-shadow-below-base
+			margin: 0
+			padding: 0
+	#{$b}-submenu
+		&__list
+			+reset-list
+			background: #ddd
+			box-shadow: $box-shadow-below-base
 		&__item
 			position: relative
 		&__link
+			display: flex
 			padding: unit(10px) unit(15px)
 .b-breadcrumb
+	$mx: 10px
 	&__list
 		+reset-list
-		+gutter(unit(5px))
-		margin: 0 0 unit(15px)
 		display: flex
 		flex-flow: row wrap
+		+gutter-x(rem($mx))
+		+gutter-y(rem(5px))
 	&__item
 		&::before
+			margin-right: -.36em // fix
 			content: '|'
-			margin: 0 unit(10px)
+			padding-right: rem($mx)
+			font-size: 65%
 		&:first-child::before
 			display: none
 	&__link
@@ -81,13 +87,22 @@
 		font-weight: 700
 
 
-.s-base
+
+
+
+
+
+
+.section
 	position: relative
 	padding: unit(30px) 0
 	@media($min-md)
 		padding: unit(50px) 0
-.s-header
-.s-footer
+.section--header,
+.section--footer
+	background: #9ACD32
+
+
 
 .test
 	background: #000

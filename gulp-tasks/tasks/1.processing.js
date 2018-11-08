@@ -29,7 +29,7 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 15 versions'] }))
     .pipe(gcmq())
-    .pipe(cssbeautify({indent: '    '}))
+    .pipe(cssbeautify({indent: '\t'}))
     .pipe(rename(config.path.app.sass.rename))
     .pipe(gulp.dest(config.path.app.sass.dest))
     .pipe(reload({ stream: true }))
@@ -49,8 +49,7 @@ gulp.task('pug', function () {
     }))
     .pipe(pug({
       locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')),
-      pretty: '    '
-      // pretty: true
+      pretty: '\t'
     }))
     .pipe(gulp.dest(config.path.app.pug.dest))
     .pipe(reload({ stream: true }))

@@ -8,7 +8,6 @@
     outline: none !important;
     -webkit-appearance: none !important;
     box-shadow: none !important;
-    vertical-align: top;
     max-width: 100%;
     position: relative;
     z-index: 1;
@@ -17,6 +16,10 @@
     padding-right: ($input-padding-x * 2) + unit($icon-size) !important;
     margin: - $input-border-width;
     max-width: calc(100%  + #{$input-border-width * 2});
+		height: calc(100% + #{$input-border-width * 2});
+		&:not([size]) {
+			width: calc(100%  + #{$input-border-width * 2});
+		}
   }
   &__icon {
     position: absolute;

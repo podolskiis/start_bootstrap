@@ -13,9 +13,6 @@
     &.slick-initialized {
       display: block;
     }
-    &.slick-dotted + * {
-      display: none;
-    }
   }
 
   // SLIDE
@@ -37,6 +34,9 @@
 
   // SLIDER
   .slick-slider {
+    &.slick-dotted ~ .slick-slider {
+      display: none;
+    }
     &.slick-vertical {
       .slick-slide {
         border: 0
