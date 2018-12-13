@@ -1,68 +1,68 @@
 extends _base/_main.pug
 block vars
-	- title = ['О компании']
-	- header = 1
-	- footer = 1
-	- modals = 1
+  - title = ['О компании']
+  - header = 1
+  - footer = 1
+  - modals = 1
 block content
-	.section
-		//- .container
-			- for (var i = 1; i <= 2; i++)
-				.row.gutter-y-10.gutter-md-10.gutter-x-xl-0
-					- for (var x = 1; x <= 5; x++)
-						.col.col-12.col-md-6
-							.test
-								| #{x}
-		.container
-			+b-breadcrumb(['Главная','Категория','Заголовок статьи'])
-			h1
-				| Title
-			p
-				img(src="//placehold.it/600x400" alt="")
-			- for (var x = 1; x <= 2; x++)
-				+p
-			form.form.form--tm-1
-				span.b-field-icon.form__field
-					input(type="text" size="30" placeholder="search" required).b-field-icon__field
-					button(type="submit").bt.b-field-icon__icon.b-field-icon__icon--over
-						i.fas.fa-search
-			br
-			form.form.form--tm-1
-				.form__group
-					label.form__label
-						| Ваше имя
-					input(type="text" name="name" placeholder="Ваше имя" required).form__field
-				.form__group
-					input(type="email" name="email" placeholder="Ваш e-mail" required).form__field
-				.form__group
-					input(type="tel" name="phone" placeholder="Ваш телефон" required).form__field
-				.form__group
-					textarea(rows="5" name="msg" placeholder="Сообщение" required).form__field.w-100
-				.form__group
-					label.b-check.b-check--checkbox-tm-1
-						span.b-check__row
-							span.b-check__col
-								span.b-check__field
-									input(type="checkbox" required).b-check__input
-									span.b-check__checked
-							span.b-check__col
-								span.b-check__val
-									| Я соглашаюсь на обработку 
-				.form__group
-					.rw
-						- for (var x = 1; x <= 2; x++)
-							.cl.cl--xs-fit
-								label.b-check.b-check--radio-tm-1
-									span.b-check__row
-										span.b-check__col
-											span.b-check__field
-												input(type="radio" name="name" required).b-check__input
-												span.b-check__checked
-										span.b-check__col
-											span.b-check__val
-												| radio ##{x}
-					
-				.form__group.form__group--bt
-					button.bt.bt--default
-						| Button
-						i.fas.fa-angle-right.icon.icon--layout-right
+  .section
+    //- .container
+      - for (var i = 1; i <= 2; i++)
+        .row.gy-10.g-md-10.g-xl-0
+          - for (var x = 1; x <= 5; x++)
+            .col.col-12.col-md-6
+              .test
+                | #{x}
+                
+    .container
+      +b-breadcrumb(['Главная','Категория','Заголовок статьи']).hide-lg-max
+      h1.mt-0
+        | Title
+      p
+        img(src="//placehold.it/600x400" alt="")
+      - for (var x = 1; x <= 2; x++)
+        +p
+      form.form.form--tm-1
+        span.b-field-icon.form__field
+          input(type="text" size="30" placeholder="search" required).b-field-icon__field
+          button(type="submit").bt.b-field-icon__icon.b-field-icon__icon--over
+            i.fas.fa-search
+      br
+      form.form.form--tm-1
+        .form__group
+          label.form__label
+            | Ваше имя
+          input(type="text" name="name" placeholder="Ваше имя" required).form__field
+        .form__group
+          input(type="email" name="email" placeholder="Ваш e-mail" required).form__field
+        .form__group
+          input(type="tel" name="phone" placeholder="Ваш телефон" required).form__field
+        .form__group
+          textarea(rows="5" name="msg" placeholder="Сообщение" required).form__field.w-100
+        .form__group
+          label.b-check.b-check--tm-1
+            span.b-check__row
+              span.b-check__col
+                span.b-check__field
+                  input(type="checkbox" required).b-check__input
+                  span.b-check__checked
+              span.b-check__col
+                span.b-check__val
+                  | Я соглашаюсь на обработку 
+        .form__group
+          .row
+            - for (var x = 1; x <= 2; x++)
+              .col-auto
+                label.b-check.b-check--tm-1
+                  span.b-check__row
+                    span.b-check__col
+                      span.b-check__field
+                        input(type="radio" name="name" required).b-check__input
+                        span.b-check__checked
+                    span.b-check__col
+                      span.b-check__val
+                        | radio ##{x}
+        .form__group.form__group--bt
+          button.bt.bt--default
+            | Button
+            i.fas.fa-angle-right.icon.icon--layout-right

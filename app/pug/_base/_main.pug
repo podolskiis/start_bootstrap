@@ -2,26 +2,25 @@ doctype html
 include _vars.pug
 include ../_mixins/_mix-include.pug
 html(lang="zxx")
-	head
-		include _head.pug
-	body.page(class=bodyClasses)
-		.page-wrap
-			if header
-				// HEADER: START 
-				include ../_section/_static/_s-header.pug
-				// HEADER: END 
-			if main
-				// MAIN: START 
-				main.main
-					block content
-				// MAIN: END 
-			if footer
-				// FOOTER: START 
-				include ../_section/_static/_s-footer.pug
-				// FOOTER: END 
-		if modals
-			// MODALS: START 
-			.modals-wrap
-				include ../_section/_static/_modals.pug
-			// MODALS: END 
-		include _script.pug
+  head
+    include _head.pug
+  body.page(class=bodyClasses)
+    .page-wrap
+      if header
+        // HEADER: START 
+        include ../_section/_static/_s-header.pug
+        // HEADER: END 
+      if main
+        // MAIN: START 
+        main.main
+          block content
+        // MAIN: END 
+      if footer
+        // FOOTER: START 
+        include ../_section/_static/_s-footer.pug
+        // FOOTER: END 
+    if modals
+      // MODALS: START 
+      include ../_section/_static/_modals.pug
+      // MODALS: END 
+    include _script.pug

@@ -30,7 +30,7 @@
     padding: 0 unit(50px); // или padding: 0;
     #{$root}__item {
       position: relative;
-			cursor: pointer;
+      cursor: pointer;
       &::after {
         // @include tsn-all;
         content: "";
@@ -70,7 +70,7 @@
       }
       #{$root}__item {
         position: relative;
-				cursor: default;
+        cursor: default;
         &::after {
           border-color: $thumbs-active-color;
         }

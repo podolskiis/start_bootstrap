@@ -1,12 +1,13 @@
 - var src = 'https://cdnjs.cloudflare.com/ajax/libs'
 +scripts(`${src}/jquery/3.3.1/jquery.min.js`)
 
-// build:js assets/js/vendors.min.js 
+// build:js js/vendors.min.js 
 = '\n'
 <!-- bower:js -->
+<script src="/bower_components/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <!-- endbower -->
 // endbuild 
 
 block scripts
 
-+scripts("assets/js/theme.js?rev=@@hash")
++scripts("js/theme.js?rev=@@hash")

@@ -2,15 +2,15 @@
 @import 'icomoon';
 
 .icon {
-	&--middle {
-		display: inline-block;
-		vertical-align: middle;
-		margin-top: -.25em;
-	}
-	&--layout-left {
-		margin-right: $ic-spacing-y;
-	}
-	&--layout-right {
-		margin-left: $ic-spacing-y;
-	}
+  &--middle {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -.25em;
+  }
+  &--layout-left {
+    margin-right: $ic-spacing-y;
+  }
+  &--layout-right {
+    margin-left: $ic-spacing-y;
+  }
 }

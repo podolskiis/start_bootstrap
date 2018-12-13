@@ -1,28 +1,28 @@
 // row gutter
-@mixin gutter($gutter: $gutter-base) {
+@mixin g($gutter: $gutter-base) {
   $gutterLR: $gutter/2;
   margin-left: -$gutterLR;
   margin-right: -$gutterLR;
-  margin-bottom: -$gutter;
+  margin-top: -$gutter;
   > * {
     padding-left: $gutterLR;
     padding-right: $gutterLR;
-    padding-bottom: $gutter;
-  }
-  & + & {
     margin-top: $gutter;
   }
+  & + & {
+    margin-top: 0;
+  }
 }
-@mixin gutter-y($gutter: $gutter-base) {
-  margin-bottom: -$gutter;
+@mixin gy($gutter: $gutter-base) {
+  margin-top: -$gutter;
   > * {
-    padding-bottom: $gutter;
-  }
-  & + & {
     margin-top: $gutter;
   }
+  & + & {
+    margin-top: 0;
+  }
 }
-@mixin gutter-x($gutter: $gutter-base) {
+@mixin gx($gutter: $gutter-base) {
   $gutterLR: $gutter/2;
   margin-left: -$gutterLR;
   margin-right: -$gutterLR;
@@ -33,7 +33,7 @@
 }
 
 // list gutter
-@mixin gutter-lines($size: $gutter-base) {
+@mixin gb($size: $gutter-base) {
   > * {
     margin-bottom: $size;
     &:last-child {

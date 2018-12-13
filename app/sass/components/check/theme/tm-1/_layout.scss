@@ -1,7 +1,7 @@
 @import 'var';
 
-&--checkbox-tm-1 {
-  $check: 'check'; // check | square
+&--tm-1 {
+  $check: 'square'; // check | square
   #{$root}__col {
     &:last-child {
       margin-left: $ch-spacing-col;
@@ -33,6 +33,19 @@
         height: 50%;
         transform: rotate(-50deg) scale(.6);
       }
+    }
+  }
+  [type="radio"] + #{$root}__checked {
+    border-radius: 50%;
+    width: $ch-size + rem(2);
+    height: $ch-size + rem(2);
+    &::before {
+      $ch-gutter-checked: $ch-gutter-checked + rem(1);
+      border-radius: 50%;
+      top: $ch-gutter-checked;
+      left: $ch-gutter-checked;
+      right: $ch-gutter-checked;
+      bottom: $ch-gutter-checked;
     }
   }
   #{$root}__val {

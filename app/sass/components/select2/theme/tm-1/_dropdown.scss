@@ -1,6 +1,6 @@
 .select2-dropdown {
   background-color: $dropdown-bg-color;
-	box-shadow: $dropdown-box-shadow-below;
+  box-shadow: $dropdown-box-shadow-below;
   border: $selection-bd-width solid $selection-bd-color;
   border-radius: $selection-bd-radius;
   z-index: $dropdown-z-index;
@@ -66,7 +66,7 @@
 
   &[aria-selected="true"] {
     background-color: $results-option-selected;
-		display: none !important;
+    display: none !important;
   }
 
   &--highlighted {

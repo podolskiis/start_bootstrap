@@ -21,17 +21,17 @@
     min-height: unit(100px);
   }
   // FIELDSET
-	#{$root}__fieldset {
-		margin-bottom: rem(30);
+  #{$root}__fieldset {
+    margin-bottom: rem(30);
     &:last-child {
       margin-bottom: 0 !important;
     }
-		@media($min-md) {
-			& {
-				margin-bottom: rem(50);
-			}
-		}
-	}
+    @media($min-md) {
+      & {
+        margin-bottom: rem(50);
+      }
+    }
+  }
   // LABEL
   #{$root}__label {
     display: block;
@@ -59,7 +59,7 @@
     &__field {
       @include text-overflow;
     }
-    &__icon {
+    &__icon--over {
       color: $placeholder-color;
       &:hover {
         color: $input-font-color;

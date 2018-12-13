@@ -11,7 +11,7 @@
   font-weight: $fw-base;
   height: $input-height;
   padding: $input-padding-y $input-padding-x;
-	vertical-align: middle;
+  vertical-align: middle;
   &:focus, &.focus {
     background-color: $input-bg-focus-color;
     border-color: $input-border-focus-color;

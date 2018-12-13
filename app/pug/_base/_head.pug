@@ -7,19 +7,19 @@ meta(name="format-detection" content="address=no")
 //- meta(http-equiv="x-rim-auto-match" content="none") // не проходит validatе w3 HTML
 
 block title
-	title=pojectTitle
+  title=pojectTitle
 
 +favicon
 
-meta(name="description" content=title + ' ' + poject)
-meta(name="keywords" content=poject)
+meta(name="description" content="")
+meta(name="keywords" content="")
 
 //- CDN connect
 +links(
-	"//use.fontawesome.com/releases/v5.3.1/css/all.css"
+  "//use.fontawesome.com/releases/v5.3.1/css/all.css"
 )
 
-// build:css assets/css/vendors.min.css 
+// build:css css/vendors.min.css 
 = '\n'
 <!-- bower:css -->
 <!-- endbower -->
@@ -28,14 +28,14 @@ meta(name="keywords" content=poject)
 block links
 
 if icomoon
-	+links("//i.icomoon.io/public/temp/"+icomoon+"/style.css")
+  +links("//i.icomoon.io/public/temp/"+icomoon+"/style.css")
 
 +links(
-	"assets/css/theme.min.css?rev=@@hash",
-	"assets/css/custom.css"
+  "css/theme.min.css?rev=@@hash",
+  "css/custom.css"
 )
 
 if modernizr
-	+scripts("assets/js/modernizr.js")
+  +scripts("js/modernizr.js")
 
 +ltIE-10

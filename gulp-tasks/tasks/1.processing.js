@@ -29,7 +29,7 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 15 versions'] }))
     .pipe(gcmq())
-    .pipe(cssbeautify({indent: '\t'}))
+    .pipe(cssbeautify({indent: '  '}))
     .pipe(rename(config.path.app.sass.rename))
     .pipe(gulp.dest(config.path.app.sass.dest))
     .pipe(reload({ stream: true }))

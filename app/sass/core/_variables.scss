@@ -15,7 +15,7 @@ $gutter-base: unit($gutter-grid-base);
 $gutter-item-base: unit(15px);
 
 $offset-size-map: ( // px
-	0,5,10,15,20,25,30,50
+  0,5,10,15,20,25,30,50
 );
 
 // COLORS
@@ -29,16 +29,16 @@ $link-hover-color-base:  darken($link-color-base, 7.5%);
 $link-active-color-base: darken($link-color-base, 15%);
 
 $bg-color: (
-	white:        #fff,
-	black:        #000,
-	gray:         #ccc,
+  white:        #fff,
+  black:        #000,
+  gray:         #ccc,
 );
 $text-color: (
-	white:        #fff,
-	black:        #000,
-	gray:         #ccc,
-	accent:       $color-2,
-	link:         $link-color-base,
+  white:        #fff,
+  black:        #000,
+  gray:         #ccc,
+  accent:       $color-2,
+  link:         $link-color-base,
 );
 $array-colors: ($bg-color, $text-color);
 
@@ -69,5 +69,5 @@ $form-group-spacing:       $gutter-item-base;
 
 // WRAP
 $wrap: (
-	600,900
+  600,900
 );

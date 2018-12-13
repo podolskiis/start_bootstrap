@@ -1,43 +1,43 @@
 html
-	font-size: 100%
+  font-size: 100%
 body
-	-webkit-font-smoothing: subpixel-antialiased
-	text-rendering: optimizeLegibility
-	font-family: $ff-base
-	font-size: $fz-base
-	font-weight: $fw-base
-	line-height: $lh-base
-	color: $color-1
+  -webkit-font-smoothing: subpixel-antialiased
+  text-rendering: optimizeLegibility
+  font-family: $ff-base
+  font-size: $fz-base
+  font-weight: $fw-base
+  line-height: $lh-base
+  color: $color-1
 
 html, body
-	@if $fix-width-site
-		min-width: ($fix-width-site + $grid-gutter)
-	@else
-		min-width: 320px
+  @if $fix-width-site
+    min-width: ($fix-width-site + $grid-gutter)
+  @else
+    min-width: 320px
 
 .container
-	@if $fix-width-site
-		width: ($fix-width-site + $grid-gutter) !important
-		max-width: none !important
-	@else
-		@media($max-md)
-			max-width: 100%
-		@media($max-sm)
-			padding: 0 $grid-gutter-sm/2
+  @if $fix-width-site
+    width: ($fix-width-site + $grid-gutter) !important
+    max-width: none !important
+  @else
+    @media($max-md)
+      max-width: 100%
+    @media($max-sm)
+      padding: 0 $grid-gutter-sm/2
 
 img:not([height])
-	vertical-align: middle
-	max-width: 100%
-	height: auto
+  vertical-align: middle
+  max-width: 100%
+  height: auto
 
 .page-wrap
-	position: relative
-	overflow: hidden
-	display: flex
-	min-height: 100vh
-	flex-direction: column
-	> main
-		flex: 1 0 auto
+  position: relative
+  overflow: hidden
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  > main
+    flex: 1 0 auto
 
 .modals-wrap
-	display: none
+  display: none

@@ -1,14 +1,14 @@
 var
-  login             = 'admin',
-  password          = 'admin',
-  project           = '2018/01/start';
+	password          = 'admin',
+  login             = 'podolskiis',
+  project           = '2018/11/start';
 module.exports = {
   path: {
     app: {
       home:         'app/',
       sass: {
         src:        'app/sass/main.scss',
-        dest:       'app/assets/css/',
+        dest:       'app/css/',
         watch:      'app/sass/**/*.+(scss|sass)',
         rename:     'theme.min.css'
       },
@@ -24,40 +24,40 @@ module.exports = {
         watch:      'bower.json'
       },
       js: {
-        watch:      'app/assets/js/*.js'
+        watch:      'app/js/*.js'
       }
     }
   },
   dist: {
     home:           'www/',
     img: {
-      src:          'app/assets/images/**',
-      dest:         'www/assets/images/'
+      src:          'app/images/**',
+      dest:         'www/images/'
     },
     useref: {
       src:          'app/*.html',
       dest:         'www/'
     },
     css: {
-      src:        'app/assets/css/theme.min.css',
-      dest:       'www/assets/css/'
+      src:        'app/css/theme.min.css',
+      dest:       'www/css/'
   	},
     import: {
       css: {
-        src:        'app/assets/css/custom.css',
-        dest:       'www/assets/css/'
+        src:        'app/css/custom.css',
+        dest:       'www/css/'
     	},
       fonts: {
-        src:        'app/assets/fonts/**',
-        dest:       'www/assets/fonts/'
+        src:        'app/fonts/**',
+        dest:       'www/fonts/'
   	  },
       js: {
-        src:        'app/assets/js/**',
-        dest:       'www/assets/js'
+        src:        'app/js/**',
+        dest:       'www/js'
   	  },
       video: {
-        src:        'app/assets/video/**',
-        dest:       'www/assets/video'
+        src:        'app/video/**',
+        dest:       'www/video'
   	  },
       dop: {
         src: [

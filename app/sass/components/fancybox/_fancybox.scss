@@ -28,3 +28,8 @@
     }
   }
 }
+.compensate-for-scrollbar {
+  &.static {
+    margin-right: 0;
+  }
+}

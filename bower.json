@@ -7,7 +7,7 @@
 	"overrides": {
 		"bootstrap": {
 			"main": [
-				
+        "dist/js/bootstrap.bundle.min.js"
 			]
 		},
 		"fancybox": {

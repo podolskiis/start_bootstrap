@@ -1,5 +1,3 @@
-@import 'var';
-
 .b-check {
   $root: &;
   display: inline-block;
@@ -18,7 +16,7 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    top: -.15em;
+		transform: translateY(-1px);
   }
   &__checked {
     display: block;
@@ -40,6 +38,5 @@
     }
   }
 
-  @import 'theme/checkbox-tm-1/layout';
-  @import 'theme/radio-tm-1/layout';
+  @import 'theme/tm-1/layout';
 }
