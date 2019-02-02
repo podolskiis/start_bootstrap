@@ -20,10 +20,10 @@ var
 
 
 /* PROCESSING
- ********************************************************/
+********************************************************/
 
-// Sass
-gulp.task('sass', function () {
+// Styles
+function styles() {
   return gulp.src(config.path.app.sass.src)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
@@ -33,11 +33,10 @@ gulp.task('sass', function () {
     .pipe(rename(config.path.app.sass.rename))
     .pipe(gulp.dest(config.path.app.sass.dest))
     .pipe(reload({ stream: true }))
-});
-
+}
 
 // Pug
-gulp.task('pug', function () {
+function pugs() {
   var YOUR_LOCALS = config.path.app.pug.json;
   return gulp.src(config.path.app.pug.src)
     .pipe(plumber())
@@ -53,36 +52,34 @@ gulp.task('pug', function () {
     }))
     .pipe(gulp.dest(config.path.app.pug.dest))
     .pipe(reload({ stream: true }))
-});
-gulp.task('setWatch', function() {
-    global.isWatching = true;
-});
-
+}
+function setWatch() {
+  global.isWatching = true;
+}
 
 // BowerWiredep
-gulp.task('bower', function () {
+function bower() {
   return gulp.src(config.path.app.bower.src)
     .pipe(wiredep({ ignorePath: /^(\.\.\/)*\.\./ }))
     .pipe(gulp.dest(config.path.app.bower.dest))
-});
-
+}
 
 // BrowserSync
-gulp.task('serve', ['bower','setWatch','pug','sass'], function() {
+function serve() {
   browserSync.init({
     server: {baseDir: config.path.app.home},
     notify: false
   })
-});
+}
 
 
 /* WATCH
- ********************************************************/
-gulp.task('watch', function() {
-  gulp.watch(config.path.app.sass.watch, ['sass']);
-  gulp.watch(config.path.app.pug.watch, ['pug']);
-  gulp.watch(config.path.app.bower.watch, ['bower']);
+********************************************************/
+function watch() {
+  gulp.watch(config.path.app.sass.watch, styles);
+  gulp.watch(config.path.app.pug.watch, pugs);
+  gulp.watch(config.path.app.bower.watch, bower);
   gulp.watch(config.path.app.js.watch).on('change', reload);
-});
-// combination tasks
-gulp.task('default', ['serve','watch']);
+}
+
+gulp.task('default', gulp.parallel(serve, setWatch, watch));
