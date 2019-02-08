@@ -55,7 +55,7 @@
   }
   // INPUT-ICON
   .b-field-icon {
-    @include field-icon(18px);
+    @include field-icon($input-size-icon);
     &__field {
       @include text-overflow;
     }

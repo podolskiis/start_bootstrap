@@ -1,23 +1,22 @@
 extends _base/_main.pug
 block vars
-  - title = ['Верстка страниц']
-  - header = 0
-  - footer = 0
+  - title = ['dev']
+  - bodyClasses = ['page--dev']
   - modals = 1
 block content
   //- +b-pagesUpdated
   .container
     h1=poject
-    .row.nowrap.gutter-y-30
+    .row.gy-30
       .col-auto
         h3.mt-0 Pages
         +b-dev('pages',[
           "index",
           "index",
-        ]).d-flex.flex-column.gutter-y-15
+        ]).d-flex.flex-column.gy-15.nowrap
       .col-auto
         h3.mt-0 Modals
         +b-dev('modals',[
           "login",
           "login",
-        ]).d-flex.flex-column.gutter-y-15
+        ]).d-flex.flex-column.gy-15.nowrap
