@@ -24,7 +24,8 @@
 	// spacing margin-padding
   @each $spacing-class, $option-rules in $spacing-map {
     @each $spacing-size in $spacing-size-map {
-			@if $spacing-size != 5 and $spacing-size != 0 {
+			// @if $spacing-size != 5 and $spacing-size != 0 {
+      @if $spacing-size > 5 {
 	      .#{$spacing-class + $sfx + '-#{strip-units($spacing-size)}'} {
 					@each $option-rule in $option-rules {
 		        #{$option-rule}: rem($spacing-size) !important;

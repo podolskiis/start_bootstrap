@@ -2562,6 +2562,15 @@ a.text-dark:focus {
   visibility: hidden !important;
 }
 
+button {
+  background: none;
+}
+
+label {
+  margin: 0;
+  display: inline;
+}
+
 .hide {
   display: none !important;
 }
@@ -3466,6 +3475,116 @@ a.text-dark:focus {
   letter-spacing: 0.0625rem;
 }
 
+.spin {
+  -webkit-animation: fa-spin 1.5s infinite linear;
+  animation: fa-spin 1.5s infinite linear;
+}
+
+.spin-left {
+  -webkit-animation: fa-spin-left 1.5s infinite linear;
+  animation: fa-spin-left 1.5s infinite linear;
+}
+
+.pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes fa-spin-left {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes fa-spin-left {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(-1turn);
+    transform: rotate(-1turn);
+  }
+}
+
+.rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flip-vertical {
+  -webkit-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.flip-both,
+.flip-horizontal.flip-vertical,
+.flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+}
+
+.flip-both,
+.flip-horizontal.flip-vertical {
+  -webkit-transform: scale(-1);
+  -ms-transform: scale(-1);
+  transform: scale(-1);
+}
+
 @font-face {
   font-family: "roboto";
   font-style: normal;
@@ -3910,10 +4029,6 @@ img:not([height]) {
   text-indent: 0;
 }
 
-.is-ios .form textarea.form__field::-moz-placeholder {
-  text-indent: 0;
-}
-
 .is-ios .form textarea.form__field:-ms-input-placeholder {
   text-indent: 0;
 }
@@ -3952,14 +4067,6 @@ img:not([height]) {
   color: #aaa;
 }
 
-.form--tm-1 .form__field::-moz-placeholder,
-.form--tm-1 .b-field-icon__field::-moz-placeholder {
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-  color: #aaa;
-}
-
 .form--tm-1 .form__field:-ms-input-placeholder,
 .form--tm-1 .b-field-icon__field:-ms-input-placeholder {
   -webkit-transition: all 0.2s;
@@ -3988,13 +4095,6 @@ img:not([height]) {
 .form--tm-1 .form__field.focus::-webkit-input-placeholder,
 .form--tm-1 .b-field-icon__field:focus::-webkit-input-placeholder,
 .form--tm-1 .b-field-icon__field.focus::-webkit-input-placeholder {
-  color: transparent;
-}
-
-.form--tm-1 .form__field:focus::-moz-placeholder,
-.form--tm-1 .form__field.focus::-moz-placeholder,
-.form--tm-1 .b-field-icon__field:focus::-moz-placeholder,
-.form--tm-1 .b-field-icon__field.focus::-moz-placeholder {
   color: transparent;
 }
 
@@ -4096,6 +4196,7 @@ img:not([height]) {
   -webkit-appearance: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
+  width: 100%;
   max-width: 100%;
   position: relative;
   z-index: 1;
@@ -4229,7 +4330,8 @@ img:not([height]) {
   margin-left: 0.625rem;
 }
 
-.b-check--tm-1 .b-check__checked {
+.b-check--tm-1 [type="checkbox"] + .b-check__checked,
+.b-check--tm-1 [type="radio"] + .b-check__checked {
   -webkit-transition-property: color, background-color, border-color;
   -o-transition-property: color, background-color, border-color;
   transition-property: color, background-color, border-color;
@@ -4244,17 +4346,23 @@ img:not([height]) {
   height: 1.125rem;
 }
 
-.b-check--tm-1 .b-check__checked::before {
+.b-check--tm-1 [type="checkbox"] + .b-check__checked::before,
+.b-check--tm-1 [type="radio"] + .b-check__checked::before {
   -webkit-transition: all 0.2s;
   -o-transition: all 0.2s;
   transition: all 0.2s;
-  top: 0.25rem;
-  left: 0.25rem;
-  right: 0.25rem;
-  bottom: 0.25rem;
-  background-color: #ddd;
-  -webkit-border-radius: 0.125rem;
-  border-radius: 0.125rem;
+}
+
+.b-check--tm-1 [type="checkbox"] + .b-check__checked::before {
+  border-bottom: 0.1875rem solid #aaa;
+  border-left: 0.1875rem solid #aaa;
+  top: 0.1875rem;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  -webkit-transform: rotate(-50deg) scale(0.6);
+  -ms-transform: rotate(-50deg) scale(0.6);
+  transform: rotate(-50deg) scale(0.6);
 }
 
 .b-check--tm-1 [type="radio"] + .b-check__checked {
@@ -4265,6 +4373,13 @@ img:not([height]) {
 }
 
 .b-check--tm-1 [type="radio"] + .b-check__checked::before {
+  top: 0.25rem;
+  left: 0.25rem;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  background-color: #ddd;
+  -webkit-border-radius: 0.125rem;
+  border-radius: 0.125rem;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   top: 0.3125rem;
@@ -4282,7 +4397,17 @@ img:not([height]) {
   border-color: #aaa;
 }
 
-.b-check--tm-1 .b-check__input:checked + .b-check__checked:before {
+.b-check--tm-1 .b-check__input[type="checkbox"]:checked + .b-check__checked {
+  background-color: #333333;
+  border-color: #333333;
+  color: #fff;
+}
+
+.b-check--tm-1 .b-check__input[type="checkbox"]:checked + .b-check__checked:before {
+  border-color: #fff;
+}
+
+.b-check--tm-1 .b-check__input[type="radio"]:checked + .b-check__checked:before {
   background-color: #333333;
 }
 

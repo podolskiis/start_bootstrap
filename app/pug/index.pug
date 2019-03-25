@@ -13,7 +13,7 @@ block content
             .col.col-12.col-md-6
               .test
                 | #{x}
-                
+
     .container
       +b-breadcrumb(['Главная','Категория','Заголовок статьи']).hide-lg-max
       h1.mt-0
@@ -23,7 +23,7 @@ block content
       - for (var x = 1; x <= 2; x++)
         +p
       form.form.form--tm-1
-        span.b-field-icon.form__field
+        .b-field-icon.form__field
           input(type="text" size="30" placeholder="search" required).b-field-icon__field
           button(type="submit").bt.b-field-icon__icon.b-field-icon__icon--over
             i.fas.fa-search
@@ -40,28 +40,14 @@ block content
         .form__group
           textarea(rows="5" name="msg" placeholder="Сообщение" required).form__field.w-100
         .form__group
-          label.b-check.b-check--tm-1
-            span.b-check__row
-              span.b-check__col
-                span.b-check__field
-                  input(type="checkbox" required).b-check__input
-                  span.b-check__checked
-              span.b-check__col
-                span.b-check__val
-                  | Я соглашаюсь на обработку 
+          +b-check('b-check--tm-1')(type="checkbox" checked)
+            | Я соглашаюсь на обработку 
         .form__group
           .row
             - for (var x = 1; x <= 2; x++)
               .col-auto
-                label.b-check.b-check--tm-1
-                  span.b-check__row
-                    span.b-check__col
-                      span.b-check__field
-                        input(type="radio" name="name" required).b-check__input
-                        span.b-check__checked
-                    span.b-check__col
-                      span.b-check__val
-                        | radio ##{x}
+                +b-check('b-check--tm-1')(type="radio" name="name" checked=(x==1)?true:false)
+                  | radio ##{x}
         .form__group.form__group--bt
           button.bt.bt--default
             | Button

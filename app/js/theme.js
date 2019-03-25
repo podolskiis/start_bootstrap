@@ -16,7 +16,6 @@ var userAgent = navigator.userAgent.toLowerCase(),
   isTouch = 'ontouchstart' in window,
 
   plugins = {
-    fieldIcon:        $('.b-field-icon'),
     bsModal:          $('[data-toggle="modal"]'),
   };
 
@@ -67,17 +66,49 @@ if (plugins.bsModal.length) {
 }
 
 
-// Focus field-icon
-if (plugins.fieldIcon.length) {
-  plugins.fieldIcon.each(function(index, el) {
-    $(this).on('focus', '.b-field-icon__field', function() {
+// VALID FIELD-LABEL
+(function(){
+  var $b = $('.b-field-label');
+  $b.each(function() {
+    $(this).find('.b-field-label__field').on('change', function() {
+      if ($(this).val() != '') {
+        $(this).add($(this).parent()).addClass('valid');
+      } else {
+        $(this).add($(this).parent()).removeClass('valid');
+      }
+    }).trigger('change');
+  });
+}());
+
+
+// FOCUS FIELD-ICON
+(function(){
+  var $b = $('.b-field-icon');
+  $b.each(function() {
+    $(this).find('.b-field-icon__field:not([readonly])').on('focus', function() {
       $(this).parent().addClass('focus');
       $(this).on('blur', function() {
         $(this).parent().removeClass('focus');
       });
     });
   });
-}
+}());
+
+
+// CHECKED B-CHECK
+(function(){
+  var $b = $('.b-check');
+  function bChange() {
+    $b.find('.b-check__input').on('change', function() {
+      if ($(this).is(':checked')) {
+        $(this).add($(this).closest($b)).addClass('checked');
+      } else {
+        $(this).add($(this).closest($b)).removeClass('checked');
+      }
+    }).trigger('change');
+  } bChange();
+  $b.on('click', bChange);
+}());
 
 
 }); // END READY

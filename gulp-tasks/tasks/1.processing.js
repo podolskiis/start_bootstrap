@@ -48,7 +48,7 @@ function pugs() {
     }))
     .pipe(pug({
       locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')),
-      pretty: '\t'
+      pretty: '    ',
     }))
     .pipe(gulp.dest(config.path.app.pug.dest))
     .pipe(reload({ stream: true }))

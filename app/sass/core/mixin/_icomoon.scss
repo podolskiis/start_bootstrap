@@ -12,6 +12,12 @@
 
 	font-family: $ff;
 	font-weight: $fw;
+  & * {
+		speak: none;
+		font-style: normal;
+		font-variant: normal;
+		text-transform: none;
+  }
 }
 @mixin icomoon() {
 	@include icon-base('icomoon', 400);
