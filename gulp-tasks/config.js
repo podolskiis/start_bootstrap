@@ -62,7 +62,7 @@ module.exports = {
       dop: {
         src: [
                     'app/*.ico',
-                    'app/.htaccess'
+                    'app/.*'
         ],
         dest:       'www/'
   	  }

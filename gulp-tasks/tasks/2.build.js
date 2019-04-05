@@ -9,6 +9,7 @@ var
   cleanCSS        = require('gulp-clean-css'),
   imagemin        = require('gulp-imagemin'),
   cache           = require('gulp-cache'),
+  gulpSequence    = require('gulp-sequence'),
   config          = require('../config');
 
 
@@ -16,12 +17,13 @@ var
 ********************************************************/
 
 // Clean (dir)
-function clean() {
-  return del([config.dist.home]);
-}
+gulp.task('clean', function() {
+	return del.sync(config.dist.home);
+});
+
 
 // Import and compress (img)
-function imgs() {
+gulp.task('img', function() {
 	return gulp.src(config.dist.img.src)
 		.pipe(cache(imagemin({
 			interlaced: true,
@@ -30,40 +32,42 @@ function imgs() {
 			use: [pngquant()]
 		})))
 		.pipe(gulp.dest(config.dist.img.dest));
-}
+});
+
 
 // Import and compress (css, js)
-function userefs() {
+gulp.task('useref', function () {
   return gulp.src(config.dist.useref.src)
     .pipe(useref())
     .pipe(gulpif('*.js',  uglify({output: {comments: /^!/}})))
     .pipe(gulpif('*.css', cleanCSS({specialComments: '/*!'})))
     .pipe(rev())
     .pipe(gulp.dest(config.dist.useref.dest));
-}
+});
 
-function minifyCss() {
+
+gulp.task('minify-css', function() {
   return gulp.src(config.dist.css.src)
     .pipe(cleanCSS())
     .pipe(gulp.dest(config.dist.css.dest));
-}
+});
+
 
 // Import all files
-function files(cb) {
+gulp.task('files', function() {
   var cat = config.dist.import;
   for (var url in cat) {
     gulp.src(cat[url].src).pipe(gulp.dest(cat[url].dest));
   }
-  cb();
-}
+});
 
 
 /* START BUILD
-********************************************************/
-var build = gulp.series(clean, gulp.parallel(imgs, userefs, minifyCss, files));
+ ********************************************************/
+ gulp.task('b', function(cb) {
+   gulpSequence('clean', ['img', 'useref', 'minify-css', 'files'], cb);
+ });
 
-gulp.task( 'b', build);
-
-/* CLEAR ALL CACHE
-********************************************************/
+ /* CLEAR ALL CACHE
+  ********************************************************/
 gulp.task('clear', function () { return cache.clearAll(); });
