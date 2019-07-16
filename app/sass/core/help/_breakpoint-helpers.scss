@@ -4,18 +4,20 @@ $helpers-map:(
 ) !default;
 
 $spacing-map: (
-  my: ('margin-top','margin-bottom'),
   mt: 'margin-top',
-  mb: 'margin-bottom',
-  mx: ('margin-left','margin-right'),
   ml: 'margin-left',
   mr: 'margin-right',
-  py: ('padding-top','padding-bottom'),
+  mb: 'margin-bottom',
+  mx: ('margin-left','margin-right'),
+  my: ('margin-top','margin-bottom'),
+  m:  ('margin-top','margin-left','margin-right','margin-bottom'),
   pt: 'padding-top',
-  pb: 'padding-bottom',
-  px: ('padding-left','padding-right'),
   pl: 'padding-left',
   pr: 'padding-right',
+  pb: 'padding-bottom',
+  px: ('padding-left','padding-right'),
+  py: ('padding-top','padding-bottom'),
+  p:  ('padding-top','padding-left','padding-right','padding-bottom'),
 ) !default;
 $spacing-size-map: $offset-size-map;
 

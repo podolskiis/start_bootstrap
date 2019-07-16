@@ -5,3 +5,7 @@ label {
   margin: 0;
   display: inline;
 }
+.modal { //fix table scrolling modal
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}

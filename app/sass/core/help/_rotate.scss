@@ -43,12 +43,12 @@
   transform: rotate(270deg)
 }
 
-.flip-horizontal {
+.flip-x {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   transform: scaleX(-1);
 }
 
-.flip-vertical {
+.flip-y {
   transform: scaleY(-1)
 }
 

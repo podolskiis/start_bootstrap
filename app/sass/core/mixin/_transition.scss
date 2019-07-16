@@ -1,5 +1,5 @@
 @mixin tsn($speed: $duration-base) {
-  transition-property: color, background-color, border-color;
+  transition-property: color, background-color, border-color, box-shadow;
   transition-duration: $speed;
 }
 @mixin tsn-shd($speed: $duration-base) {

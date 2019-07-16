@@ -1,4 +1,9 @@
 // Typography
+* {
+  word-break: break-word;
+  hyphens: auto;
+}
+
 @include title-size(unit, (36,30,24,18,14,12));
 
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {

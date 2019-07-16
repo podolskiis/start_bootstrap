@@ -12,6 +12,13 @@
     vertical-align: middle;
     max-width: 100%;
     line-height: normal;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+      -webkit-transition-delay: 9999s;
+    }
     &::placeholder {}
     &:not(textarea) {
       @include text-overflow;

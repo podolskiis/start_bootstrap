@@ -14,10 +14,13 @@
 	// min-max width
   $sfx: if($breakpoint == 'xs', '', '-#{$breakpoint}');
 	@each $val in $wrap {
-		.max#{$sfx}-w#{$val} {
+		.w#{$sfx}-#{$val} {
+			width: rem($val) !important;
+		}
+		.max-w#{$sfx}-#{$val} {
 			max-width: rem($val) !important;
 		}
-		.min#{$sfx}-w#{$val} {
+		.min-w#{$sfx}-#{$val} {
 			min-width: rem($val) !important;
 		}
 	}

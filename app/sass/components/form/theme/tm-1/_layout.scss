@@ -5,16 +5,38 @@
   // FIELD
   #{$root}__field,
   .b-field-icon__field {
+    @include field-input;
     &::placeholder {
       @include tsn-all;
       color: $placeholder-color;
+      font-weight: $input-font-weight;
     }
     &:focus, &.focus {
       &::placeholder {
         color: $placeholder-focus-color;
       }
     }
-    @include field-input;
+    &:not(.b-field-icon):not(textarea) {
+      height: $input-height;
+    }
+    // VALIDATE
+    & + #{$root}__text-error {
+      display: none;
+      color: $input-bg-error-color;
+    }
+    &:valid {
+      &:not(:placeholder-shown) {
+      	background-color: $input-bg-valid-color;
+      }
+    }
+    &:invalid {
+      &:not(:placeholder-shown) {
+      	border-color: $input-bg-error-color;
+        + #{$root}__text-error {
+          display: block;
+        }
+      }
+    }
   }
   textarea#{$root}__field {
     height: auto;
@@ -66,12 +88,12 @@
       }
     }
   }
-  // VALIDATE
-  input.error, textarea.error {
-    border-color: $input-border-color-error !important;
-    box-shadow: 0 0 unit(3px) $input-border-color-error !important;
-  }
-  label.error {
-    display: none !important;
-  }
+  // VALIDATE "jquery-validation"
+  // input.error, textarea.error {
+  //   border-color: $input-border-color-error !important;
+  //   box-shadow: 0 0 unit(3px) $input-border-color-error !important;
+  // }
+  // label.error {
+  //   display: none !important;
+  // }
 }

@@ -32,9 +32,9 @@
 	}
 }
 
-// fixed: Safari
-button {
+button, .bt {
 	[class*="icon-"], [class*="fa-"] {
-		padding: 1px;
+		padding: 1px; // fixed: Safari
+		display: block;
 	}
 }

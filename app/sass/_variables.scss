@@ -64,9 +64,12 @@ $input-padding-y:          unit(8px);
 $input-padding-x:          unit(10px);
 
 $input-font-size:          $fz-base;
+$input-font-family:        $ff-base;
 $input-font-weight:        400;
 $input-size-icon:          18px;
 $form-group-spacing:       $gutter-item-base;
+
+$input-bg-error-color:     red;
 
 // WRAP
 $wrap: (
