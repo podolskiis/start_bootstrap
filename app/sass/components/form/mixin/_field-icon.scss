@@ -14,7 +14,6 @@
     z-index: 1;
     background-color: transparent !important;
     border: none !important;
-    padding-right: ($input-padding-x * 2) + unit($icon-size) !important;
     margin: - $input-border-width;
     max-width: calc(100%  + #{$input-border-width * 2});
     height: calc(100% + #{$input-border-width * 2});
@@ -26,12 +25,27 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: $input-padding-x;
     color: inherit;
     font-size: unit($icon-size);
     &--over {
       z-index: 2;
       cursor: pointer;
+    }
+  }
+  &:not(.b-field-icon--left) {
+    .b-field-icon__icon {
+      right: $input-padding-x;
+    }
+    .b-field-icon__field {
+      padding-right: ($input-padding-x * 2) + unit($icon-size) !important;
+    }
+  }
+  &--left {
+    .b-field-icon__icon {
+      left: $input-padding-x;
+    }
+    .b-field-icon__field {
+      padding-left: ($input-padding-x * 2) + unit($icon-size) !important;
     }
   }
 }

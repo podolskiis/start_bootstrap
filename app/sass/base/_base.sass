@@ -11,13 +11,13 @@ body
 
 html, body
   @if $fix-width-site
-    min-width: ($fix-width-site + $grid-gutter)
+    min-width: ($fix-width-site + $gutter-grid-base)
   @else
     min-width: 320px
 
 .container
   @if $fix-width-site
-    width: ($fix-width-site + $grid-gutter) !important
+    width: ($fix-width-site + $gutter-grid-base) !important
     max-width: none !important
   @else
     @media($max-md)

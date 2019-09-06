@@ -9,6 +9,7 @@ var userAgent = navigator.userAgent.toLowerCase(),
   $document = $(document),
   $window = $(window),
   $html = $('html'),
+  $b,
 
   isIE = userAgent.indexOf('msie') != -1 ? parseInt(userAgent.split('msie')[1]) : userAgent.indexOf('trident') != -1 ? 11 : userAgent.indexOf('edge') != -1 ? 12 : false,
   isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
