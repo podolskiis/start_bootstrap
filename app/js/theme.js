@@ -45,7 +45,6 @@ $document.ready( function () {
 
 
 
-
 // BS-MODAL
 if (plugins.bsModal.length) {
   (function(){

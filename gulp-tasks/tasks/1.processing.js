@@ -24,22 +24,22 @@ var
 
 // Sass
 gulp.task('sass', function () {
-  return gulp.src(config.path.app.sass.src)
+  return gulp.src(config.paths.app.sass.src)
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
-    .pipe(autoprefixer({ browsers: ['last 15 versions'] }))
+    .pipe(autoprefixer({overrideBrowserslist: ['last 2 versions'], cascade: false}))
     .pipe(gcmq())
     .pipe(cssbeautify({indent: '  '}))
-    .pipe(rename(config.path.app.sass.rename))
-    .pipe(gulp.dest(config.path.app.sass.dest))
+    .pipe(rename(config.paths.app.sass.rename))
+    .pipe(gulp.dest(config.paths.app.sass.dest))
     .pipe(reload({ stream: true }))
 });
 
 
 // Pug
 gulp.task('pug', function () {
-  var YOUR_LOCALS = config.path.app.pug.json;
-  return gulp.src(config.path.app.pug.src)
+  var YOUR_LOCALS = config.paths.app.pug.json;
+  return gulp.src(config.paths.app.pug.src)
     .pipe(plumber())
     .pipe(changed('app', {extension: '.html'}))
     .pipe(gulpif(global.isWatching, cached('pug')))
@@ -51,7 +51,7 @@ gulp.task('pug', function () {
       locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')),
       pretty: '\t'
     }))
-    .pipe(gulp.dest(config.path.app.pug.dest))
+    .pipe(gulp.dest(config.paths.app.pug.dest))
     .pipe(reload({ stream: true }))
 });
 gulp.task('setWatch', function() {
@@ -61,16 +61,16 @@ gulp.task('setWatch', function() {
 
 // BowerWiredep
 gulp.task('bower', function () {
-  return gulp.src(config.path.app.bower.src)
+  return gulp.src(config.paths.app.bower.src)
     .pipe(wiredep({ ignorePath: /^(\.\.\/)*\.\./ }))
-    .pipe(gulp.dest(config.path.app.bower.dest))
+    .pipe(gulp.dest(config.paths.app.bower.dest))
 });
 
 
 // BrowserSync
 gulp.task('serve', ['bower','setWatch','pug','sass'], function() {
   browserSync.init({
-    server: {baseDir: config.path.app.home},
+    server: {baseDir: config.paths.app.home},
     notify: false
   })
 });
@@ -79,10 +79,10 @@ gulp.task('serve', ['bower','setWatch','pug','sass'], function() {
 /* WATCH
  ********************************************************/
 gulp.task('watch', function() {
-  gulp.watch(config.path.app.sass.watch, ['sass']);
-  gulp.watch(config.path.app.pug.watch, ['pug']);
-  gulp.watch(config.path.app.bower.watch, ['bower']);
-  gulp.watch(config.path.app.js.watch).on('change', reload);
+  gulp.watch(config.paths.app.sass.watch, ['sass']);
+  gulp.watch(config.paths.app.pug.watch, ['pug']);
+  gulp.watch(config.paths.app.bower.watch, ['bower']);
+  gulp.watch(config.paths.app.js.watch).on('change', reload);
 });
 // combination tasks
 gulp.task('default', ['serve','watch']);
